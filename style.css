@@ -22,6 +22,22 @@ h1:nth-child(1){
     padding-left:20px;
 
 }
+.right{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height: 70px;
+    width:170px;
+}
+.right a{
+    font-family: 'Raleway', sans-serif;
+    color:white;
+    text-decoration: none;
+    font-size:25px;
+    background-color: rgb(24, 20, 20);
+    border: 10px solid rgb(24, 20, 20);
+    border-radius:20px;
+}
 i{
     font-size:48px;
     color:red;
