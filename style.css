@@ -38,6 +38,7 @@ h1:nth-child(1){
     border: 10px solid rgb(24, 20, 20);
     border-radius:20px;
 }
+section
 i{
     font-size:48px;
     color:red;
