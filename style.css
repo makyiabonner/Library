@@ -9,6 +9,8 @@ body{
     background-color: rgb(49, 41, 41);
 }
 header{
+    display: flex;
+    justify-content: space-between;
     height:70px;
     background:linear-gradient(rgb(107, 74, 74),rgb(63, 45, 45));
     box-shadow:5px 5px 15px;
