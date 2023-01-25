@@ -5,6 +5,9 @@
     padding:0;
     box-sizing:border-box;
 }
+.blurry{
+    filter:blur(5px);
+}
 body{
     background-color: rgb(49, 41, 41);
 }
@@ -51,10 +54,32 @@ section{
     border-radius:100%;
     background-color:rgb(107, 74, 74);
 }
+.newBook-hover{
+    display:flex;
+    width:150px;
+    align-items: center;
+    flex-direction: column;
+}
 .newBook > p{
     color:white;
     font-size:8em;
     font-weight: bold;  
+    transition: 2s;
+}
+.newBook-hover > p{
+    padding-top:20px;
+    font-size:20px;
+    color:white;
+    font-family: 'Raleway', sans-serif;
+}
+.newBook p:hover{
+    transform: rotate(180deg);
+}
+.enter-book{
+    display:none;
+    position:absolute;
+    width:100vw;
+    top:0;
 }
 i{
     font-size:48px;
