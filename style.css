@@ -75,8 +75,8 @@ section{
 .newBook p:hover{
     transform: rotate(180deg);
 }
-.enter-book{
-    display:flex;
+.enterBook{
+    display: none;
     align-items: center;
     justify-content: center;
     position:absolute;
@@ -87,19 +87,20 @@ article{
     display:flex;
     justify-content: space-between;
 }
-.enter-book > article{
+.enterBook > article{
     width:1000px;
     height:400px;
     background-color: black;
     font-family: 'Raleway', sans-serif;
     color:white;
-    border-radius:5px;
+    border-radius:10px;
 }
 .bg-img{
     background: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80);
     background-size: cover;
     height:100%;
     width:60%;
+    border-radius: 10px;
 }
 .bg-grad{
     background: linear-gradient(90deg, transparent, black 90%);

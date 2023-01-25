@@ -1,8 +1,16 @@
-
-
-document.querySelector(".newBook-hover").addEventListener('click', () =>
-document.querySelector('.screen').classList.toggle('blurry')
+let hover = document.querySelector(".newBook-hover");
+let blur = document.querySelector('.screen');
+let form = document.querySelector('.enterBook');
+let submit = document.querySelector('#submit');
+hover.addEventListener('click', () => {
+    blur.classList.toggle('blurry');
+    form.style.display = "flex";
+}
 )
+submit.addEventListener('click', () => {
+    blur.classList.toggle('blurry');
+    form.style.display = "none";
+})
 
 let book = (bookName,pagesRead, pagesTotal, completed) => {
     let completePerc = completion(pagesRead,pagesTotal)
