@@ -42,7 +42,20 @@ section{
     padding: 40px;
     height:80vh;
 }
-
+.newBook{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:110px;
+    width:110px;
+    border-radius:100%;
+    background-color:rgb(107, 74, 74);
+}
+.newBook > p{
+    color:white;
+    font-size:8em;
+    font-weight: bold;  
+}
 i{
     font-size:48px;
     color:red;
