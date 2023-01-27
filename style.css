@@ -41,9 +41,60 @@ h1:nth-child(1){
     border: 10px solid rgb(24, 20, 20);
     border-radius:20px;
 }
-section{
+.main{
+    display:grid;
     padding: 40px;
     height:80vh;
+}
+.prevBook{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width:250px;
+    height:400px;
+    background: url(https://images.unsplash.com/photo-1515325595179-59cd5262ca53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80);
+    background-size: contain;
+    background-color: rgb(238, 212, 212);
+    background-repeat: no-repeat;
+    border-radius: 0px 40px;
+}
+.bookTitle{
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    width:100%;
+    height:15%;
+    padding:15px;
+}
+.bookTitle-text{
+    color:black;
+    font-family: 'Raleway', sans-serif;
+    font-size:x-large;
+    font-weight: 700px;
+    letter-spacing: 2px;
+}
+.prevBook-hover{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    height:50%;
+    background-color: rgb(107, 74, 74);
+    border-radius: 0px 0px 0px 40px;
+    padding:20px;
+}
+.completion{
+    font-family:'Unbounded', cursive;
+    align-self: center;
+    color:white;
+    font-size:30px;
+}
+.percent{
+    font-family: 'Raleway', sans-serif;
+    color:white;
+    align-self:center;
+    justify-self: center;
+    font-size:70px;
+
 }
 .newBook{
     display:flex;
@@ -75,19 +126,23 @@ section{
 .newBook p:hover{
     transform: rotate(180deg);
 }
-.enterBook{
-    display: none;
+.enterBook, .permDelete{
+    display: flex;
     align-items: center;
     justify-content: center;
     position:absolute;
     width:100vw;
+    height:100%;
     top:0;
+}
+.permDelete{
+    z-index:1;
 }
 article{
     display:flex;
     justify-content: space-between;
 }
-.enterBook > article{
+.enterBook > article, .permDelete > article{
     width:1000px;
     height:400px;
     background-color: black;
@@ -95,32 +150,57 @@ article{
     color:white;
     border-radius:10px;
 }
+.permDelete > article > .bg-img{
+    background: url(https://images.unsplash.com/photo-1628118256263-586593550616?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80);
+    background-size: contain;
+}
 .bg-img{
     background: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80);
     background-size: cover;
+}
+.permDelete > .bg-img,.bg-img{
     height:100%;
     width:60%;
     border-radius: 10px;
 }
-.bg-grad{
+.permDelete > article > .bg-img > .bg-grad, .bg-grad{
     background: linear-gradient(90deg, transparent, black 90%);
     width:100%;
     height:100%;
 }
-article > form{
+.permD-right{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:30px;
+}
+.permD-right, article > form{
     width:40%;
     height:100%;
     padding:20px;
+}
+.sure{
+    font-size:30px;
+    letter-spacing: 1px;
+    justify-self: center;
 }
 form > h2{
     font-size:60px;
     letter-spacing: 2px;
 }
+.deleteTitle{
+    font-size: 35px;
+    letter-spacing: 1px;
+}
 h4{
     font-size:40px;
     padding-top:20px;
 }
-form > div{
+#yes, #no{
+    font-size:50px;
+    font-family: 'Raleway', sans-serif;
+}
+.delete, form > div{
     display:flex;
     flex-direction:column;
 }
@@ -128,7 +208,10 @@ form > div > label{
     font-size: 25px;
     padding-bottom:2px;
 }
-.yes-no{
+.sure{
+    justify-self:center;
+}
+.delete, .yes-no{
     flex-direction: row;
     justify-content: space-around;
 }
