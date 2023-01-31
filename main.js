@@ -6,9 +6,28 @@ let bookN = document.querySelector("#bookName");
 let pagesR  = document.querySelector("#currPage");
 let pagesT = document.querySelector("#bookPage");
 let complete = document.querySelector('input[name = "yes-no"]:checked');
+let permDelete = document.querySelector('.permDelete');
+let edit = document.querySelector('#edit');
+let del = document.querySelector('#delete');
+let deleteYes = document.querySelector('#del-yes');
+let deleteNo = document.querySelector('#del-no');
+
 
 let library = [];
 
+deleteYes.addEventListener('click', () => {
+    deleteBook();
+}
+)
+deleteNo.addEventListener('click', () => {
+    deleteBook();
+}
+)
+del.addEventListener('click', () => {
+    blur.classList.toggle('blurry');
+    permDelete.style.display = 'flex';
+}
+)
 hover.addEventListener('click', () => {
     blur.classList.toggle('blurry');
     form.style.display = "flex";
@@ -36,8 +55,10 @@ function editBook(){
 }
 function deleteBook(){
     //deletes the library index and DOM content while maintaining order
+    blur.classList.toggle('blurry');
+    permDelete.style.display = 'none';
 }
 function completion(a,b){
     let percent = Math.floor((a / b) * 100);
-    return `${percent}% DONE`
+    return `${percent}% DONE`;
 }
