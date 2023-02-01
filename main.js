@@ -46,6 +46,8 @@ let book = (bookName,pagesRead, pagesTotal, completed) => {
 
 function createBook(){
     library.push(book(bookN.value,pagesR.value,pagesT.value,complete.value));
+    //for loop to iterate thru library array
+    //change the DOM content for library
     console.log(library);
 }
 function editBook(){
