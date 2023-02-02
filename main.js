@@ -20,9 +20,13 @@ del.type = 'button';
 del.id = 'delete';
 del.name = 'Delete';
 del.value = 'Delete';
+
 const bookmark = document.createElement('input');
-// input type="button" id="delete" name="Delete" value="Delete" />
-// input type="button" id="edit" name="Edit" value="Edit" />
+bookmark.type = 'button';
+bookmark.id = 'edit';
+bookmark.name = 'Edit';
+bookmark.value = 'Edit';
+
 const nbHover = document.createElement('div');
 const newBook = document.createElement('div');
 const sign = document.createElement('p');
