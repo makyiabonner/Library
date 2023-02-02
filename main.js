@@ -46,6 +46,8 @@ bookTitle.appendChild(titleText);
 prevBook.appendChild(bookHover);
 bookHover.appendChild(comp);
 bookHover.appendChild(perc);
+bookHover.appendChild(del);
+bookHover.appendChild(bookmark);
 main.appendChild(nbHover);
 nbHover.appendChild(newBook);
 newBook.appendChild(sign);
@@ -93,15 +95,12 @@ let book = (bookName, pagesRead, pagesTotal, completed) => {
 //,complete.value
 function createBook(){
     library.push(book(bookN.value,pagesR.value,pagesT.value));
-    for(i = 0; i <= library.length - 1; i++){
+    library.forEach(b => {
         main.appendChild(prevBook);
-        titleText.textContent = library[i].bookName;
+        titleText.textContent = b.bookName;
         comp.textContent = 'completion';
-        perc.textContent = completion(library[i].pagesRead, library[i].pagesTotal);
-        
-        //        <input type="button" id="delete" name="Delete" value="Delete" />
-        //        <input type="button" id="edit" name="Edit" value="Edit" />
-    }
+        perc.textContent = completion(b.pagesRead, b.pagesTotal);
+    })
     //change the DOM content for library
 }
 function editBook(){
