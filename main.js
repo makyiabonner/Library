@@ -101,7 +101,6 @@ function createBook(){
         comp.textContent = 'completion';
         perc.textContent = completion(b.pagesRead, b.pagesTotal);
     })
-    //change the DOM content for library
 }
 function editBook(){
     //when click opens selected library index
