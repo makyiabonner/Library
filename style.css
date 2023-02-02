@@ -110,6 +110,7 @@ h1:nth-child(1){
     width:150px;
     align-items: center;
     flex-direction: column;
+    order:1;
 }
 .newBook > p{
     color:white;

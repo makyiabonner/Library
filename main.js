@@ -1,4 +1,3 @@
-let hover = document.querySelector(".newBook-hover");
 let blur = document.querySelector('.screen');
 let form = document.querySelector('.enterBook');
 let submit = document.querySelector('#submit');
@@ -37,13 +36,9 @@ nbHover.appendChild(newBook);
 newBook.appendChild(sign);
 nbHover.appendChild(signText);
 
+sign.textContent = '+';
+signText.textContent = 'Add New Book';
 
-//<div class="newBook-hover">
-//            <div class="newBook">
-//                <p>+</p>
-//            </div>
-//            <p>Add New Book</p>
-//        </div>
 let permDelete = document.querySelector('.permDelete');
 let edit = document.querySelector('#edit');
 let del = document.querySelector('#delete');
@@ -66,7 +61,7 @@ del.addEventListener('click', () => {
     permDelete.style.display = 'flex';
 }
 )
-hover.addEventListener('click', () => {
+nbHover.addEventListener('click', () => {
     blur.classList.toggle('blurry');
     form.style.display = "flex";
 }
