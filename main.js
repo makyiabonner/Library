@@ -13,17 +13,31 @@ const titleText = document.createElement('p')
 const bookHover = document.createElement('div');
 const comp = document.createElement('p');
 const perc = document.createElement('p');
+const nbHover = document.createElement('div');
+const newBook = document.createElement('div');
+const sign = document.createElement('p');
+const signText = document.createElement('p');
+
 prevBook.className = 'prevBook';
 bookTitle.className = 'bookTitle';
 titleText.className = 'bookTitle-text';
 bookHover.className = 'prevBook-hover';
 comp.className = 'completion';
 perc.className = 'percent';
+nbHover.className = 'newBook-hover';
+newBook.className = 'newBook';
+
 prevBook.appendChild(bookTitle);
 bookTitle.appendChild(titleText);
 prevBook.appendChild(bookHover);
 bookHover.appendChild(comp);
 bookHover.appendChild(perc);
+main.appendChild(nbHover);
+nbHover.appendChild(newBook);
+newBook.appendChild(sign);
+nbHover.appendChild(signText);
+
+
 //<div class="newBook-hover">
 //            <div class="newBook">
 //                <p>+</p>
