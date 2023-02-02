@@ -6,12 +6,23 @@ let pagesR  = document.querySelector("#currPage");
 let pagesT = document.querySelector("#bookPage");
 let main = document.querySelector(".main");
 let complete = document.querySelector('input[name = "yes-no"]:checked');
+
 const prevBook = document.createElement('div');
 const bookTitle = document.createElement('div');
 const titleText = document.createElement('p')
 const bookHover = document.createElement('div');
 const comp = document.createElement('p');
 const perc = document.createElement('p');
+
+//setting up edit and delete button
+const del = document.createElement('input');
+del.type = 'button';
+del.id = 'delete';
+del.name = 'Delete';
+del.value = 'Delete';
+const bookmark = document.createElement('input');
+// input type="button" id="delete" name="Delete" value="Delete" />
+// input type="button" id="edit" name="Edit" value="Edit" />
 const nbHover = document.createElement('div');
 const newBook = document.createElement('div');
 const sign = document.createElement('p');
@@ -40,8 +51,6 @@ sign.textContent = '+';
 signText.textContent = 'Add New Book';
 
 let permDelete = document.querySelector('.permDelete');
-let edit = document.querySelector('#edit');
-let del = document.querySelector('#delete');
 let deleteYes = document.querySelector('#del-yes');
 let deleteNo = document.querySelector('#del-no');
 
