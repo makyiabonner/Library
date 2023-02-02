@@ -7,13 +7,6 @@ let pagesT = document.querySelector("#bookPage");
 let main = document.querySelector(".main");
 let complete = document.querySelector('input[name = "yes-no"]:checked');
 
-const prevBook = document.createElement('div');
-const bookTitle = document.createElement('div');
-const titleText = document.createElement('p')
-const bookHover = document.createElement('div');
-const comp = document.createElement('p');
-const perc = document.createElement('p');
-
 //setting up edit and delete button
 const del = document.createElement('input');
 del.type = 'button';
@@ -32,24 +25,9 @@ const newBook = document.createElement('div');
 const sign = document.createElement('p');
 const signText = document.createElement('p');
 
-prevBook.className = 'prevBook';
-bookTitle.className = 'bookTitle';
-titleText.className = 'bookTitle-text';
-bookHover.className = 'prevBook-hover';
-comp.className = 'completion';
-perc.className = 'percent';
-nbHover.className = 'newBook-hover';
-newBook.className = 'newBook';
 
-prevBook.appendChild(bookTitle);
-bookTitle.appendChild(titleText);
-prevBook.appendChild(bookHover);
-bookHover.appendChild(comp);
-bookHover.appendChild(perc);
-bookHover.appendChild(del);
-bookHover.appendChild(bookmark);
-main.appendChild(nbHover);
-nbHover.appendChild(newBook);
+main.appendChild(nbHover).classList.add('newBook-hover');
+nbHover.appendChild(newBook).classList.add('newBook');
 newBook.appendChild(sign);
 nbHover.appendChild(signText);
 
@@ -72,6 +50,8 @@ deleteNo.addEventListener('click', () => {
 }
 )
 del.addEventListener('click', () => {
+    library.pop(1);
+    console.log(library);
     blur.classList.toggle('blurry');
     permDelete.style.display = 'flex';
 }
@@ -95,12 +75,47 @@ let book = (bookName, pagesRead, pagesTotal, completed) => {
 //,complete.value
 function createBook(){
     library.push(book(bookN.value,pagesR.value,pagesT.value));
-    library.forEach(b => {
-        main.appendChild(prevBook);
-        titleText.textContent = b.bookName;
-        comp.textContent = 'completion';
-        perc.textContent = completion(b.pagesRead, b.pagesTotal);
-    })
+    const prevBook = document.createElement('div');
+    const bookTitle = document.createElement('div');
+    const titleText = document.createElement('p')
+    const bookHover = document.createElement('div');
+    const comp = document.createElement('p');
+    const perc = document.createElement('p');
+    main.appendChild(prevBook).classList.add('prevBook');
+    prevBook.appendChild(bookTitle).classList.add('bookTitle');
+    bookTitle.appendChild(titleText).classList.add('bookTitle-text');
+    prevBook.appendChild(bookHover).classList.add('prevBook-hover');
+    bookHover.appendChild(comp).classList.add('completion');
+    bookHover.appendChild(perc).classList.add('percent');
+    const del = document.createElement('input');
+    del.addEventListener('click', () => {
+        console.log(library);
+        blur.classList.toggle('blurry');
+        permDelete.style.display = 'flex';
+    }
+    )
+    const bookmark = document.createElement('input');
+    bookHover.appendChild(del);
+    bookHover.appendChild(bookmark);
+    main.appendChild(nbHover).classList.add('newBook-hover');
+    nbHover.appendChild(newBook).classList.add('newBook');
+
+    titleText.textContent = bookN.value;
+    comp.textContent = 'completion';
+    perc.textContent = completion(pagesR.value, pagesT.value);
+    
+    //setting up edit and delete button
+    del.type = 'button';
+    del.id = 'delete';
+    del.name = 'Delete';
+    del.value = 'Delete';
+
+    bookmark.type = 'button';
+    bookmark.id = 'edit';
+    bookmark.name = 'Edit';
+    bookmark.value = 'Edit';
+        console.log(library);
+        console.log(main);
 }
 function editBook(){
     //when click opens selected library index
@@ -111,6 +126,8 @@ function deleteBook(){
     //deletes the library index and DOM content while maintaining order
     blur.classList.toggle('blurry');
     permDelete.style.display = 'none';
+    library.pop(1);
+    console.log(library);
 }
 function completion(a,b){
     let percent = Math.floor((a / b) * 100);
