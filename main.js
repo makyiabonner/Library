@@ -34,11 +34,6 @@ nbHover.appendChild(signText);
 sign.textContent = '+';
 signText.textContent = 'Add New Book';
 
-let permDelete = document.querySelector('.permDelete');
-let deleteYes = document.querySelector('#del-yes');
-let deleteNo = document.querySelector('#del-no');
-
-
 let library = [];
 
 
@@ -76,9 +71,15 @@ function createBook(){
     const del = document.createElement('input');
     del.addEventListener('click', () => {
         prevBook.remove();
-    }
-    )
+        library.pop();
+    })
     const bookmark = document.createElement('input');
+    bookmark.addEventListener('click', () => {
+        blur.classList.toggle('blurry');
+        form.style.display = "flex";
+        titleText.textContent = bookN.value;
+        perc.textContent = completion(pagesR.value, pagesT.value);
+    });
     bookHover.appendChild(del);
     bookHover.appendChild(bookmark);
     main.appendChild(nbHover).classList.add('newBook-hover');
@@ -105,12 +106,6 @@ function editBook(){
     //when click opens selected library index
     //redisplays the selected library index's content in appropriate format
     //when submitted it replaces the selected index with refurbished model
-}
-function deleteBook(){
-    //deletes the library index and DOM content while maintaining order
-    blur.classList.toggle('blurry');
-    permDelete.style.display = 'none';
-    console.log(library);
 }
 function completion(a,b){
     let percent = Math.floor((a / b) * 100);
