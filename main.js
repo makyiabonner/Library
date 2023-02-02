@@ -41,21 +41,7 @@ let deleteNo = document.querySelector('#del-no');
 
 let library = [];
 
-deleteYes.addEventListener('click', () => {
-    deleteBook();
-}
-)
-deleteNo.addEventListener('click', () => {
-    deleteBook();
-}
-)
-del.addEventListener('click', () => {
-    library.pop(1);
-    console.log(library);
-    blur.classList.toggle('blurry');
-    permDelete.style.display = 'flex';
-}
-)
+
 nbHover.addEventListener('click', () => {
     blur.classList.toggle('blurry');
     form.style.display = "flex";
@@ -89,9 +75,7 @@ function createBook(){
     bookHover.appendChild(perc).classList.add('percent');
     const del = document.createElement('input');
     del.addEventListener('click', () => {
-        console.log(library);
-        blur.classList.toggle('blurry');
-        permDelete.style.display = 'flex';
+        prevBook.remove();
     }
     )
     const bookmark = document.createElement('input');
@@ -126,7 +110,6 @@ function deleteBook(){
     //deletes the library index and DOM content while maintaining order
     blur.classList.toggle('blurry');
     permDelete.style.display = 'none';
-    library.pop(1);
     console.log(library);
 }
 function completion(a,b){
